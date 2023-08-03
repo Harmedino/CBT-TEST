@@ -98,29 +98,14 @@ body {
 .position button:hover {
   background-color: #7a217c;
 }
-input[type="radio"]:checked + .custom-radio::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px; /* Adjust the position of the indicator */
-  left: 4px; /* Adjust the position of the indicator */
-  width: 12px; /* Adjust the size of the indicator */
-  height: 12px; /* Adjust the size of the indicator */
-  background-color: #7f1381; /* Change this to the desired color when the radio button is checked */
-  border-radius: 50%;
+
+.submit {
+  width: 70%;
+  background-color: #7a217c;
+  height: 230px;
+  border-radius: 20px;
 }
 
-/* Style the custom radio button container */
-.custom-radio {
-  display: inline-block;
-  width: 20px; /* Adjust the size of the custom radio button */
-  height: 20px; /* Adjust the size of the custom radio button */
-  border: 2px solid #ccc; /* Default color for the custom radio button */
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  margin-right: 10px; /* Adjust the space between the custom radio button and label */
-}
 #text p {
   font-size: 16px;
   margin: 0px 0px 0px 0px;

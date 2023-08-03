@@ -151,6 +151,16 @@ function prevQuestion() {
     display();
   }
 }
+function displayResult() {
+  result.innerHTML = `
+  <tr>
+  <th scope="row">ENGLISH</th>
+  <td>${myArray.length}</td>
+  <td>${selected}</td>
+  <td>${score}</td>
+</tr>`;
+}
+displayResult();
 
 function submit() {
   // console.log(firstModal);
