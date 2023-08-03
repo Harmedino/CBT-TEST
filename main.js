@@ -63,6 +63,7 @@ function startQuiz(param) {
   } else if (param === "startExam") {
     instruction.hidden = true;
     mainPage.hidden = false;
+    userName2.innerHTML = `NAME: ${name}`;
     timer();
     display();
   }
