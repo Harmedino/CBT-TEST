@@ -82,9 +82,7 @@ function timer() {
       return;
     }
     clearInterval(clear);
-    console.log("time up");
-    lastModal.classList.remove("hidden2");
-    final.innerHTML = `You score ${score} out of ${myArray.length}`;
+    submit()
   }, 1000);
 }
 
@@ -93,10 +91,7 @@ let clicked = true;
 
 function display() {
   text.innerHTML = "";
-  mark.innerHTML = "";
-  mark.innerHTML += `<p class="  mt-3">Question ${index + 1} of ${
-    myArray.length
-  }</p>`;
+  
   text.innerHTML += `<p class=" mt-3"> ${index + 1}. ${
     myArray[index].questions
   }</p>`;
@@ -114,10 +109,8 @@ function display() {
     }
     element.addEventListener("click", () => {
       myArray[index].chosenAnswer = element.value;
-      final.innerHTML = `You score ${score} out of ${myArray.length}`;
       if (myArray[index].cAnswer == myArray[index].chosenAnswer) {
         score++;
-        final.innerHTML = `You score ${score} out of ${myArray.length}`;
       } else {
       }
       console.log();
@@ -161,16 +154,11 @@ function displayResult() {
 </tr>`;
 }
 displayResult();
+let submitPage = document.getElementById('submit')
 
 function submit() {
-  // console.log(firstModal);
-  firstModal.classList.remove("hidden1");
+  // alert()
+  submitPage.hidden = false
+  mainPage.hidden = true;
 }
-function no1() {
-  firstModal.classList.add("hidden1");
-}
-function yes1() {
-  firstModal.classList.add("hidden1");
-  lastModal.classList.remove("hidden2");
-  final.innerHTML = `You score ${score} out of ${myArray.length}`;
-}
+

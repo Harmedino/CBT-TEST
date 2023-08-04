@@ -110,6 +110,9 @@ body {
   font-size: 16px;
   margin: 0px 0px 0px 0px;
 }
+.table-responsive {
+  overflow-x: auto;
+}
 
 .finish {
   background-color: #7a217c !important;
@@ -162,6 +165,9 @@ button {
   .timer {
     width: 60%;
   }
+  .welcome-body{
+    width: 90%;
+  }
 }
 
 /* Media query for the smallest screens */
@@ -183,34 +189,4 @@ button {
   }
 }
 
-.submit-modal {
-  width: 50%;
-  height: 400px;
-  background-color: grey;
-  position: absolute;
-  top: 33%;
-  left: 25%;
-  border-radius: 10px;
-}
-h3 {
-  text-align: center;
-  padding-top: 30px;
-}
-.hidden1 {
-  display: none !important;
-}
-.final-modal {
-  width: 50%;
-  height: 400px;
-  background-color: grey;
-  position: absolute;
-  top: 33%;
-  left: 25%;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hidden2 {
-  display: none !important;
-}
+

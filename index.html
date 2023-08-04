@@ -23,7 +23,7 @@
     />
   </head>
   <body>
-    <div class="body"  id="starter" hidden>
+    <div class="body"  id="starter" >
       <div class="welcome-body"  id="welcome-body">
         <div class="welcome"> WELCOME TO </div>
         <img src="./image/logo 1.png" width="140px" />
@@ -87,12 +87,13 @@
           <div class="time w-50 text-light btn" id="timer">
              
           </div>
-          <div class="finish btn text-light w-50">SUBMIT</div>
+          <div class="finish btn text-light w-50" onclick="submit()">SUBMIT</div>
         </div>
         <p id="answered">( You have answerd 0 of 5 )</p>
 
         <div class="border">
           <div class="pl-5" id="text"> </div>
+          
         </div>
 
         <div class="mt-5 d-flex justify-content-around w-50">
@@ -108,7 +109,7 @@
     </div>
   </div>
       </div>
-    <div class="quest"  id="submit">
+    <div class="quest"  id="submit" hidden >
       <div class="quest-body ">
         <div class="profile text-center">
           <img src="./image/AVATAR.png" alt="" />
@@ -117,19 +118,23 @@
         </div>
        <div class="position">
         <div class="submit p-5 ">
-          <table class="table table-bordered text-light">
-            <thead>
-              <tr>
-                <th scope="col">SUBJECT</th>
-                <th scope="col">NO OF QUESTIONS</th>
-                <th scope="col">ATTEMPTED</th>
-                <th scope="col">SCORED</th>
-              </tr>
-            </thead>
-            <tbody id="result" class="text-center">
-             
-             
-            </tbody>
+          <div class="table-responsive">
+            <table class="table table-bordered text-light">
+              <thead>
+                <tr>
+                  <th scope="col">SUBJECT</th>
+                  <th scope="col">NO OF QUESTIONS</th>
+                  <th scope="col">ATTEMPTED</th>
+                  <th scope="col">SCORED</th>
+                </tr>
+              </thead>
+              <tbody id="result" class="text-center">
+          
+                <!-- Your table data goes here -->
+          
+              </tbody>
+            </table>
+          </div>
           </table>
         </div>
        
@@ -138,28 +143,8 @@
       </div>
     </div>
 
-    <div class="box hide" hidden>
-      <center id="mark"> </center>
   
-      <center class="mt-3">
-        <button class="mr-5" onclick=
-        <br />
-        <button class="mt-3" onclick="submit()">Submit</button>
-      </center>
-    </div>
-    <div class="final-modal hidden2" id="last-modal">
-      <!-- <center> <h1 class="mt-4">CONGRATULATIONS</h1> <br>
-    </center> <br> -->
-
-      <h1 id="final"> </h1>
-    </div>
-    <div class="submit-modal hidden1" id="firt-modal">
-      <h3>Are you sure you want to submit</h3>
-      <center class="mt-5">
-        <button class="mr-5" onclick="yes1()">YES</button>
-        <button class="ml-5" onclick="no1()">NO</button>
-      </center>
-    </div>
+  
   </body>
 </html>
 <script src="main.js"></script>
