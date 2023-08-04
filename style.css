@@ -105,6 +105,9 @@ body {
   height: 230px;
   border-radius: 20px;
 }
+.question-body{
+  min-height: 240px !important;
+}
 
 #text p {
   font-size: 16px;

@@ -1,6 +1,8 @@
 let index = 0;
 let score = 0;
 let name;
+let selected = 0;
+let clicked = true;
 
 myArray = [
   {
@@ -33,7 +35,108 @@ myArray = [
     chosenAnswer: "",
     cAnswer: "False",
   },
+  {
+    questions:
+      "Which gas do plants absorb from the atmosphere during photosynthesis?",
+    options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    chosenAnswer: "",
+    cAnswer: "Carbon Dioxide",
+  },
+  {
+    questions: "What is the chemical symbol for water?",
+    options: ["H2O", "CO2", "O2", "N2"],
+    chosenAnswer: "",
+    cAnswer: "H2O",
+  },
+  {
+    questions: "Which mammal can fly?",
+    options: ["Bat", "Dolphin", "Elephant", "Kangaroo"],
+    chosenAnswer: "",
+    cAnswer: "Bat",
+  },
+  {
+    questions: "What is the capital city of Japan?",
+    options: ["Tokyo", "Beijing", "Seoul", "Shanghai"],
+    chosenAnswer: "",
+    cAnswer: "Tokyo",
+  },
+  {
+    questions: "Who wrote the play 'Romeo and Juliet'?",
+    options: [
+      "William Shakespeare",
+      "Charles Dickens",
+      "Jane Austen",
+      "Mark Twain",
+    ],
+    chosenAnswer: "",
+    cAnswer: "William Shakespeare",
+  },
+  {
+    questions: "What is the largest organ in the human body?",
+    options: ["Brain", "Heart", "Liver", "Skin"],
+    chosenAnswer: "",
+    cAnswer: "Skin",
+  },
+  {
+    questions: "What is the chemical symbol for iron?",
+    options: ["Fe", "Ir", "In", "I"],
+    chosenAnswer: "",
+    cAnswer: "Fe",
+  },
+  {
+    questions: "What is the largest planet in our solar system?",
+    options: ["Mars", "Jupiter", "Venus", "Mercury"],
+    chosenAnswer: "",
+    cAnswer: "Jupiter",
+  },
+  {
+    questions: "Who painted the Mona Lisa?",
+    options: [
+      "Leonardo da Vinci",
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Michelangelo",
+    ],
+    chosenAnswer: "",
+    cAnswer: "Leonardo da Vinci",
+  },
+  {
+    questions: "What is the chemical symbol for gold?",
+    options: ["Go", "Au", "Gl", "Ag"],
+    chosenAnswer: "",
+    cAnswer: "Au",
+  },
+  {
+    questions: "Which country is known as the Land of the Rising Sun?",
+    options: ["China", "Korea", "Japan", "Thailand"],
+    chosenAnswer: "",
+    cAnswer: "Japan",
+  },
+  {
+    questions: "What is the tallest mountain in the world?",
+    options: [
+      "Mount Everest",
+      "Mount Kilimanjaro",
+      "Mount McKinley",
+      "Mount Fuji",
+    ],
+    chosenAnswer: "",
+    cAnswer: "Mount Everest",
+  },
+  {
+    questions: "Who wrote the book '1984'?",
+    options: ["George Orwell", "J.K. Rowling", "Harper Lee", "Stephen King"],
+    chosenAnswer: "",
+    cAnswer: "George Orwell",
+  },
+  {
+    questions: "What is the chemical symbol for oxygen?",
+    options: ["O", "Ox", "Oy", "Oz"],
+    chosenAnswer: "",
+    cAnswer: "O",
+  },
 ];
+
 let welcomeBody = document.getElementById("welcome-body");
 let startExam = document.getElementById("startExam");
 let input = document.getElementById("input");
@@ -61,6 +164,7 @@ function startQuiz(param) {
       input.classList.add("border-danger");
     }
   } else if (param === "startExam") {
+    answered.innerHTML = `( You have answerd ${selected} of ${myArray.length})`;
     instruction.hidden = true;
     mainPage.hidden = false;
     userName2.innerHTML = `NAME: ${name}`;
@@ -82,16 +186,13 @@ function timer() {
       return;
     }
     clearInterval(clear);
-    submit()
+    submit();
   }, 1000);
 }
 
-let selected = 0;
-let clicked = true;
-
 function display() {
   text.innerHTML = "";
-  
+
   text.innerHTML += `<p class=" mt-3"> ${index + 1}. ${
     myArray[index].questions
   }</p>`;
@@ -111,9 +212,9 @@ function display() {
       myArray[index].chosenAnswer = element.value;
       if (myArray[index].cAnswer == myArray[index].chosenAnswer) {
         score++;
+        displayResult();
       } else {
       }
-      console.log();
       if (element.checked === true && clicked === true) {
         clicked = false;
         answered.innerHTML = `( You have answerd ${++selected} of ${
@@ -147,18 +248,18 @@ function prevQuestion() {
 function displayResult() {
   result.innerHTML = `
   <tr>
-  <th scope="row">ENGLISH</th>
+  <th scope="row">General knowledge</th>
   <td>${myArray.length}</td>
   <td>${selected}</td>
   <td>${score}</td>
 </tr>`;
 }
-displayResult();
-let submitPage = document.getElementById('submit')
+
+let submitPage = document.getElementById("submit");
 
 function submit() {
+  displayResult();
   // alert()
-  submitPage.hidden = false
+  submitPage.hidden = false;
   mainPage.hidden = true;
 }
-
