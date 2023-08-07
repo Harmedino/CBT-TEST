@@ -198,8 +198,8 @@ function display() {
   }</p>`;
 
   myArray[index].options.forEach((element) => {
-    text.innerHTML += ` <p>  <input type="radio" name="question" id="lott" value="${element}" >
-          <label> ${element} </p>
+    text.innerHTML += ` <p> <label> <input type="radio" name="question" id="lott" value="${element}" >
+           ${element} </label> </p>
           `;
   });
 
