@@ -258,8 +258,11 @@ function displayResult() {
 let submitPage = document.getElementById("submit");
 
 function submit() {
-  displayResult();
-  // alert()
-  submitPage.hidden = false;
-  mainPage.hidden = true;
+  let check = confirm("Are you sure you want to submit");
+  if (check) {
+    displayResult();
+    // alert()
+    submitPage.hidden = false;
+    mainPage.hidden = true;
+  }
 }
