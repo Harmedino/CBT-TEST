@@ -198,8 +198,8 @@ function display() {
   }</p>`;
 
   myArray[index].options.forEach((element) => {
-    text.innerHTML += ` <p>  <input type="radio" name="question" id="lott" value="${element}" >
-          <label> ${element} </p>
+    text.innerHTML += ` <p> <label> <input type="radio" name="question" id="lott" value="${element}" >
+           ${element} </label> </p>
           `;
   });
 
@@ -258,8 +258,11 @@ function displayResult() {
 let submitPage = document.getElementById("submit");
 
 function submit() {
-  displayResult();
-  // alert()
-  submitPage.hidden = false;
-  mainPage.hidden = true;
+  let check = confirm("Are you sure you want to submit");
+  if (check) {
+    displayResult();
+    // alert()
+    submitPage.hidden = false;
+    mainPage.hidden = true;
+  }
 }
