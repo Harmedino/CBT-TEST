@@ -186,7 +186,10 @@ function timer() {
       return;
     }
     clearInterval(clear);
-    submit();
+    displayResult();
+    // alert()
+    submitPage.hidden = false;
+    mainPage.hidden = true;
   }, 1000);
 }
 
