@@ -174,7 +174,7 @@ function startQuiz(param) {
 }
 
 let time = document.getElementById("timer");
-let second = 60;
+let second = 90;
 let firstModal = document.getElementById("firt-modal");
 let lastModal = document.getElementById("last-modal");
 function timer() {
@@ -235,6 +235,7 @@ function nextQuestion() {
     if (myArray[index].chosenAnswer) {
       clicked = false;
     }
+
     display();
   }
 }
